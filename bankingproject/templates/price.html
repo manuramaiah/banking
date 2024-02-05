@@ -1,0 +1,417 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Application Form</title>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/">
+            <span>Yours Bank</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto" style="font-size: 20px;">
+              <li class="nav-item ">
+                <a class="nav-link" href="#" >Application Form <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <section>
+
+    <form action="#" method="post">
+      {% csrf_token %}
+        <div class="container">
+            <h4>Fill the form :</h4>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+<!--        <label for="dob">Date of Birth:</label>-->
+        <input type="date" id="dob" name="dob" placeholder="Enter your date of birth" required>
+
+<!--        <label for="age">Age:</label>-->
+        <input type="text" id="age" name="age" placeholder="Enter your age" required>
+
+<!--        <label for="gender">Gender:</label>-->
+        <select id="gender" name="gender" placeholder="Select your gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+<!--        <label for="phone">Phone Number:</label>-->
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+<!--        <label for="email">Email:</label>-->
+        <input type="email" id="email" name="email"  placeholder="Enter your email address" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+<!--        <label for="district">District:</label>-->
+        <select id="district" name="district" required>
+            <option value="trivandrum">Trivandrum</option>
+            <option value="kollam">Kollam</option>
+            <option value="pathanamthitta">Pathanamthitta</option>
+            <option value="alappuzha">Alappuzha</option>
+            <option value="kottayam">Kottayam</option>
+            <option value="idukki">Idukki</option>
+            <option value="ernakulam">Ernakulam</option>
+            <option value="thrissur">Thrissur</option>
+            <option value="palakkad">Palakkad</option>
+            <option value="malappuram">Malappuram</option>
+            <option value="kozhikode">Kozhikode</option>
+            <option value="wayanad">Wayanad</option>
+            <option value="kannur">Kannur</option>
+            <option value="kasaragod">Kasaragod</option>
+
+        </select>
+
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch" required>
+            <option value="trivandrum">Attingal</option>
+            <option value="trivandrum">Neyyaattinkara</option>
+            <option value="trivandrum">Varkala</option>
+            <option value="trivandrum">Kilimanoor</option>
+            <option value="trivandrum">Kattakkada</option>
+            <option value="kollam">Karunagappally</option>
+            <option value="kollam">Kadakkal</option>
+            <option value="kollam">Kottiyim</option>
+            <option value="kollam">Kundara</option>
+            <option value="kollam">Kollam Town</option>
+
+            <!-- Add sub-areas based on the selected district -->
+        </select>
+
+        <label for="accountType">Account Type:</label>
+        <select id="accountType" name="accountType" required>
+            <option value="savings">Savings Account</option>
+            <option value="current">Current Account</option>
+            <!-- Add more account types as needed -->
+        </select>
+
+        <label>Materials Provided:</label>
+        <input type="checkbox" id="debitCard" name="materials[]" value="debitCard">
+        <label for="debitCard">Debit Card</label>
+
+        <input type="checkbox" id="creditCard" name="materials[]" value="creditCard">
+        <label for="creditCard">Credit Card</label>
+
+        <input type="checkbox" id="chequeBook" name="materials[]" value="chequeBook">
+        <label for="chequeBook">Cheque Book</label>
+
+        <input type="checkbox" id="others" name="materials[]" value="others">
+        <label for="others">Others</label>
+
+        <input type="submit" value="Submit & Logout">
+            </div>
+    </form>
+
+
+  </section>
+
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- bootstrap js -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- custom js -->
+  <script src="{% static 'js/custom.js' %}"></script>
+
+
+</body>
+
+</html>
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Application Form</title>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/">
+            <span>Yours Bank</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto" style="font-size: 20px;">
+              <li class="nav-item ">
+                <a class="nav-link" href="#" >Application Form <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <section>
+
+    <form action="#" method="post">
+      {% csrf_token %}
+        <div class="container">
+            <h4>Fill the form :</h4>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+<!--        <label for="dob">Date of Birth:</label>-->
+        <input type="date" id="dob" name="dob" placeholder="Enter your date of birth" required>
+
+<!--        <label for="age">Age:</label>-->
+        <input type="text" id="age" name="age" placeholder="Enter your age" required>
+
+<!--        <label for="gender">Gender:</label>-->
+        <select id="gender" name="gender" placeholder="Select your gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+<!--        <label for="phone">Phone Number:</label>-->
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+<!--        <label for="email">Email:</label>-->
+        <input type="email" id="email" name="email"  placeholder="Enter your email address" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+<!--        <label for="district">District:</label>-->
+        <select id="district" name="district" required>
+            <option value="trivandrum">Trivandrum</option>
+            <option value="kollam">Kollam</option>
+            <option value="pathanamthitta">Pathanamthitta</option>
+            <option value="alappuzha">Alappuzha</option>
+            <option value="kottayam">Kottayam</option>
+            <option value="idukki">Idukki</option>
+            <option value="ernakulam">Ernakulam</option>
+            <option value="thrissur">Thrissur</option>
+            <option value="palakkad">Palakkad</option>
+            <option value="malappuram">Malappuram</option>
+            <option value="kozhikode">Kozhikode</option>
+            <option value="wayanad">Wayanad</option>
+            <option value="kannur">Kannur</option>
+            <option value="kasaragod">Kasaragod</option>
+
+        </select>
+
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch" required>
+            <option value="trivandrum">Attingal</option>
+            <option value="trivandrum">Neyyaattinkara</option>
+            <option value="trivandrum">Varkala</option>
+            <option value="trivandrum">Kilimanoor</option>
+            <option value="trivandrum">Kattakkada</option>
+            <option value="kollam">Karunagappally</option>
+            <option value="kollam">Kadakkal</option>
+            <option value="kollam">Kottiyim</option>
+            <option value="kollam">Kundara</option>
+            <option value="kollam">Kollam Town</option>
+
+            <!-- Add sub-areas based on the selected district -->
+        </select>
+
+        <label for="accountType">Account Type:</label>
+        <select id="accountType" name="accountType" required>
+            <option value="savings">Savings Account</option>
+            <option value="current">Current Account</option>
+            <!-- Add more account types as needed -->
+        </select>
+
+        <label>Materials Provided:</label>
+        <input type="checkbox" id="debitCard" name="materials[]" value="debitCard">
+        <label for="debitCard">Debit Card</label>
+
+        <input type="checkbox" id="creditCard" name="materials[]" value="creditCard">
+        <label for="creditCard">Credit Card</label>
+
+        <input type="checkbox" id="chequeBook" name="materials[]" value="chequeBook">
+        <label for="chequeBook">Cheque Book</label>
+
+        <input type="checkbox" id="others" name="materials[]" value="others">
+        <label for="others">Others</label>
+
+        <input type="submit" value="Submit & Logout">
+            </div>
+    </form>
+
+
+  </section>
+
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- bootstrap js -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- custom js -->
+  <script src="{% static 'js/custom.js' %}"></script>
+
+
+</body>
+
+</html>
